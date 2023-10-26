@@ -19,9 +19,8 @@ renderToDom("#cards", refStuff);
 // .findIndex() & (.includes() - string method)
 const toggleCart = (event) => {
   if (event.target.id.includes("fav-btn")) {
-  const [, id]= event.target.id.split('--')
-   
-  const index = referenceList.findIndex(taco => taco.id === Number(id))
+   const array= event.target.id.split('--')
+   console.log(array)
   }
 }
 

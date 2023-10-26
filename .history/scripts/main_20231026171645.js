@@ -19,22 +19,15 @@ renderToDom("#cards", refStuff);
 // .findIndex() & (.includes() - string method)
 const toggleCart = (event) => {
   if (event.target.id.includes("fav-btn")) {
-  const [, id]= event.target.id.split('--')
-   
-  const index = referenceList.findIndex(taco => taco.id === Number(id))
+   console.log('Clicked Fav btn')
   }
 }
 
 // SEARCH
-// .filter() 
+// .filter()
 const search = (event) => {
-  const userInput = event.target.value.toLowerCase();
-  const searchResult = referenceList.filter(taco => 
-    taco.title.toLowerCase().includes(userInput) ||
-    taco.author.toLowerCase().includes(userInput) ||
-    taco.description.toLowerCase().includes(userInput)
-  ) 
-  renderCards(searchResult);
+  const eventLC = event.target.value.toLowerCase();
+  console.log(eventLC)
 }
 
 // BUTTON FILTER
@@ -50,10 +43,10 @@ const buttonFilter = (event) => {
   }
   if(event.target.id.includes('books')) {
     const books = referenceList.filter(item => item.type.toLowerCase() === 'book');
-    renderCards(books);
+    renderCards(books)
   }
   if(event.target.id.includes('clearFilter')) {
-    renderCards(referenceList);
+    render
   }
   if(event.target.id.includes('productList')) {
     let table = `<table class="table table-dark table-striped" style="width: 600px">
@@ -88,11 +81,6 @@ const cartTotal = () => {
 // RESHAPE DATA TO RENDER TO DOM
 // .map()
 const productList = () => {
-  return referenceList.map(item => ({ 
-    title: item.title,
-    price: item.price, 
-    type: item.type 
-  }))
   return [{ title: "SAMPLE TITLE", price: 45.00, type: "SAMPLE TYPE" }]
 }
 
