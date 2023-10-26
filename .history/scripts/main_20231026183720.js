@@ -19,22 +19,18 @@ renderToDom("#cards", refStuff);
 // .findIndex() & (.includes() - string method)
 const toggleCart = (event) => {
   if (event.target.id.includes("fav-btn")) {
-  const [, id]= event.target.id.split('--')
-   
-  const index = referenceList.findIndex(taco => taco.id === Number(id))
+   console.log('Clicked Fav btn')
   }
 }
 
 // SEARCH
-// .filter() 
-const search = (event) => {
-  const userInput = event.target.value.toLowerCase();
-  const searchResult = referenceList.filter(taco => 
+  const eventLC = userInput.target.value.toLowerCase();
+  const searchResult = referenceList.filter(taco => {
     taco.title.toLowerCase().includes(userInput) ||
     taco.author.toLowerCase().includes(userInput) ||
     taco.description.toLowerCase().includes(userInput)
-  ) 
-  renderCards(searchResult);
+  }) 
+  renderCards(searchResult)
 }
 
 // BUTTON FILTER

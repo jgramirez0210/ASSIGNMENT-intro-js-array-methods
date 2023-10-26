@@ -19,22 +19,15 @@ renderToDom("#cards", refStuff);
 // .findIndex() & (.includes() - string method)
 const toggleCart = (event) => {
   if (event.target.id.includes("fav-btn")) {
-  const [, id]= event.target.id.split('--')
-   
-  const index = referenceList.findIndex(taco => taco.id === Number(id))
+   console.log('Clicked Fav btn')
   }
 }
 
 // SEARCH
-// .filter() 
+// .filter()
 const search = (event) => {
-  const userInput = event.target.value.toLowerCase();
-  const searchResult = referenceList.filter(taco => 
-    taco.title.toLowerCase().includes(userInput) ||
-    taco.author.toLowerCase().includes(userInput) ||
-    taco.description.toLowerCase().includes(userInput)
-  ) 
-  renderCards(searchResult);
+  const eventLC = event.target.value.toLowerCase();
+  console.log(eventLC)
 }
 
 // BUTTON FILTER
@@ -91,8 +84,7 @@ const productList = () => {
   return referenceList.map(item => ({ 
     title: item.title,
     price: item.price, 
-    type: item.type 
-  }))
+    type: item.type }))
   return [{ title: "SAMPLE TITLE", price: 45.00, type: "SAMPLE TYPE" }]
 }
 

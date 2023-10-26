@@ -19,9 +19,7 @@ renderToDom("#cards", refStuff);
 // .findIndex() & (.includes() - string method)
 const toggleCart = (event) => {
   if (event.target.id.includes("fav-btn")) {
-  const [, id]= event.target.id.split('--')
-   
-  const index = referenceList.findIndex(taco => taco.id === Number(id))
+   console.log('Clicked Fav btn')
   }
 }
 
@@ -33,8 +31,8 @@ const search = (event) => {
     taco.title.toLowerCase().includes(userInput) ||
     taco.author.toLowerCase().includes(userInput) ||
     taco.description.toLowerCase().includes(userInput)
-  ) 
-  renderCards(searchResult);
+  }) 
+  renderCards(searchResult)
 }
 
 // BUTTON FILTER

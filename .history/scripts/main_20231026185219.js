@@ -21,7 +21,7 @@ const toggleCart = (event) => {
   if (event.target.id.includes("fav-btn")) {
   const [, id]= event.target.id.split('--')
    
-  const index = referenceList.findIndex(taco => taco.id === Number(id))
+  const index = referenceList.fin
   }
 }
 
